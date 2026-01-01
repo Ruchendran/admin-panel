@@ -1,0 +1,47 @@
+@import "../../styles.scss";
+.product{
+    justify-content: space-around;
+    box-shadow: 2px 2px 20px  grey ;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.image{
+    height: 100px;
+}
+th,td{
+    border: 2px solid $designColor;
+    border-collapse: collapse;
+    text-align: center;
+    height: 80px;
+}
+
+thead{
+    color:$bgColor;
+    height: 50px;
+    background: $designColor;
+}
+.btn{
+    width: fit-content;
+}
+thead{
+    height: 50px;
+}
+.quntity-btn{
+    width: 30px;
+    height: 30px;
+    color:$bgColor;
+    background: $designColor;
+    border: none;
+    font-weight: bold;
+}
+.mobile-cart-container{
+    display: none;
+}
+.btn{
+    margin: 10px;
+    width: 130px;
+}
+p{
+    margin: 0px;
+    margin-top: 5px;
+}

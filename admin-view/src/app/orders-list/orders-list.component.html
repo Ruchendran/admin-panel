@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row m-2">
+    <table class="col-md-12 mt-3 mb-3">
+        <thead>
+            <tr>
+                <th>
+                    Index
+                <th>
+                    Order  Id
+                </th>
+                <th>
+                    User Id
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Order Time
+                </th>
+                <th>
+                    View
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        @for (order of orderList; track order._id) {
+            <tr>
+                <td>
+                    {{$index+1}}
+                </td>
+                <td>
+                    {{order._id}}
+                </td>
+                <td>
+                    {{order.userId}}
+                </td>
+                <td >
+                    {{order.productName}}
+                </td>
+                <td>
+                    {{order.orderTime}}
+                </td>
+                <td>
+                    <button class="btn" (click)="clickToviewOrder(order)">
+                        View
+                    </button>
+                </td>
+            </tr>      
+        }
+        </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+@import "../styles.scss";
+.admin-main{
+    width: 80vw;
+    height: transform;
+    position: absolute;
+    top: 80px;
+    left: 20vw;
+}
+.header{
+    position: fixed;
+    height: 80px !important;
+    width: 100vw;
+    background: $designColor;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+.nav-section{
+    width: 20vw;
+    position: fixed;
+    height: 100vh;
+    background: $mobileBg;
+    box-shadow: 3px 3px 10px grey;
+    top: 0px;
+    left: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 10px;
+    z-index: 2;
+}
+blockquote b{
+    color:$designColor;
+    font-size: 20px;
+    // position: absolute;
+}
+blockquote{
+    cursor: pointer;
+}
+.route-section{
+    color:$designColor;
+    align-items: start;
+}
+.line{
+    color:$designColor;
+    width: 100%;
+}
+a{
+    color:$designColor;
+    text-decoration: none;
+}

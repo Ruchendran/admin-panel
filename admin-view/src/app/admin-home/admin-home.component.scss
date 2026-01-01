@@ -1,0 +1,32 @@
+@import "../../styles.scss";
+.landing-container{
+    color:$designColor;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.landing-sub-div{
+    height: transparent;
+    align-items: center;
+}
+.btn{
+    width: 300px;
+    height: 50px;
+}
+.btn:hover{
+    border: 2px solid $bgColor;
+}
+.head-card{
+
+    height: 100px;
+    font-size: 20px;
+}
+.schema-card{
+    cursor: pointer;
+    margin: 20px;
+    height: 100px;
+    font-weight: bold;
+}
