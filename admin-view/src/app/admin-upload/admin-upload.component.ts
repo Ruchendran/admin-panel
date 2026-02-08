@@ -54,11 +54,11 @@ export class AdminUploadComponent implements OnInit {
     const input=event.target as HTMLInputElement;
     if(input.files && input.files.length > 0){
       const file=input?.files[0]
-      console.log(file.size,"all the values");
-      if((file.size/1000)>10){
-         this.productData.reset();
-         alert('PLease Upload the under the 10KB Images')
-      }
+      // console.log(file.size,"all the values");
+      // if((file.size/1000)>10){
+      //    this.productData.reset();
+      //    alert('PLease Upload the under the 10KB Images')
+      // }
       const reader=new FileReader();
       reader.onload=()=>{
         this.productData.patchValue({

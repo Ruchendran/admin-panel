@@ -27,6 +27,13 @@ export class OrdersListComponent implements OnInit{
       this.getOrders();
   }
   clickToviewOrder=(order:any)=>{
-    this.route.navigate([`order-view/${order._id}`])
+    this.route.navigate([`order-view`],{queryParams:{userId:order.userId,orderId:order._id}})
+  }
+  returnProductsName=(products:any)=>{
+    let productsName:any=[];
+    products.forEach((product:any)=>{
+      productsName.push(product?.productName)
+    })
+    return productsName.join(",")
   }
 }

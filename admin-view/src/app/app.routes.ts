@@ -18,7 +18,11 @@ export const routes: Routes = [
         loadComponent:()=>import("./orders-list/orders-list.component").then(s=>s.OrdersListComponent)
     },
     {
-        path:'order-view/:orderId',
+        path:'order-view',
         loadComponent:()=>import("./order-view/order-view.component").then(s=>s.OrderViewComponent)
+    },
+    {
+        path:'track-order',
+        loadComponent:()=>import("./track-order/track-order.component").then(s=>s.TrackOrderComponent)
     }
 ];

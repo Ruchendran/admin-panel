@@ -1,23 +1,54 @@
-<div class="container pad-top-other">
-    <div class="row">
-        <h4 class="col-12 id">
-            Order Id -  <span class="order-id-span">{{orderId}}</span>
-        </h4>
-        <p>
-            Expected on Today
-        </p>
-        <div class="col-12 col-md-12 tracking-container flex-vertical">
-            <ng-container *ngFor="let stage of trackingMapList;let i=index;let od=odd;" class="m-4">
-                <div class="track-stage flex" [ngClass]="i<activeTrackingIndex?'active-track-stages':'unactive-track-stages'" (click)="updateStage(i)">
-                    <b  [ngClass]="!od?'bold-text-even':'bold-text-odd'">
-                        {{stage}}
-                    </b>
-                </div>
-                <div class="track-line" *ngIf="i!=2">
-                    
-                </div>
-            </ng-container>
-        </div>
+<div class="container order-container" *ngIf="orderDetails"> 
+    <div class="row m-2">
+        <table class="col-md-12 mt-3 mb-3">
+            <thead>
+                <tr>
+                    <th>
+                        Index
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Order
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of orderDetails.orderedProducts;track product.productId;let isFirst=$first;let indexOut=$index){
+                <tr>
+                    <td [attr.rowspan]="orderDetails.orderedProducts.length" *ngIf="isFirst">
+                        {{indexOut+1}}
+                    </td>
+                    <td>
+                    <img [src]="product.productImg" class="image" />
+                    </td>
+                    <td>
+                        {{product.productName}}
+                    </td>
+                    <td >
+                        {{product.quantity}}
+                    </td>
+                    <td>
+                        {{product.productPrice | currency:'INR'}}
+                    </td>
+                    <td [attr.rowspan]="orderDetails.orderedProducts.length"  *ngIf="isFirst">
+                        <button  class="btn" (click)="trackOrder(orderDetails)">
+                            Track Order
+                        </button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
     </div>
 </div>
-<app-event-modal [inputMsg]="modalMsg" [btnName]="btnName" *ngIf="updateModal" (sendEvent)="receiveEvent($event)"></app-event-modal>

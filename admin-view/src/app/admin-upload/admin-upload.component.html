@@ -7,7 +7,16 @@
                 <label>
                     Product Image :
                 </label>
-                <input  type="file" accept="image/*" class="image-input" (change)="onChange($event)"  />
+                <ng-container>
+                    <div>
+                    <input  type="file" accept="image/*" class="image-input display-hide" (change)="onChange($event)" #uploadImg />
+                    
+                        <label class="generic label pad-right-10">
+                            Upload Image
+                        </label>
+                        <i class="fa-solid fa-upload icon" (click)="uploadImg.click()"></i>
+                    </div>
+                </ng-container>
             </div>
             <div class="prod-name-section input-section" >
                 <label>
@@ -25,7 +34,7 @@
                 <label>
                     Product Family :
                 </label>
-                <select class="select-input" formControlName="productFamily">
+                <select class="select-input" formControlName="productFamily" aria-placeholder="Select Family" placeholder="Select Family" [value]="productFamilyList[0]">
                     <option *ngFor="let family of productFamilyList">
                         {{family}}
                     </option>
@@ -41,7 +50,7 @@
                 <label>
                     Product Desription : 
                 </label>
-                <textarea formControlName="prodDes"></textarea>
+                <textarea formControlName="prodDes" placeholder="write the escription abt product..."></textarea>
                 <!-- <input type="text"  formControlName="prodDes" class="txt-input"/> -->
             </div>
             <div class="btn-section flex">
