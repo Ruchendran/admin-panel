@@ -52,3 +52,12 @@
         </table>
     </div>
 </div>
+<div class="container mobile-order-container">
+    <div class="row">
+        <ng-container *ngFor="let order of mobileAccordianDetails">
+            <app-parent-child-accordian [parentProps]="order" (emitOrderTrack)="getOrderTrack($event)">
+
+            </app-parent-child-accordian>
+        </ng-container>
+    </div>
+</div>

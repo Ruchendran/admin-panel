@@ -24,5 +24,13 @@ export const routes: Routes = [
     {
         path:'track-order',
         loadComponent:()=>import("./track-order/track-order.component").then(s=>s.TrackOrderComponent)
+    },
+    {
+        path:'delivered-order',
+        loadComponent:()=>import("./delivered/delivered.component").then(s=>s.DeliveredComponent)
+    },
+    {
+        path:'un-delivered-order',
+        loadComponent:()=>import("./un-delivered/un-delivered.component").then(s=>s.UnDeliveredComponent)
     }
 ];

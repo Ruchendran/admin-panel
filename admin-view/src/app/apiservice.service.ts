@@ -15,7 +15,9 @@ export class ApiserviceService {
     getOrdersList:serverVal.server+"/admin/get-orders-list",
     getOrderDetail:serverVal.server+'/order',
     updOrderStage:serverVal.server+'/order/update-order-stage',
-    getUserOrderDetail:serverVal.server+'/order/specific-user-order'
+    getUserOrderDetail:serverVal.server+'/order/specific-user-order',
+    getDeliveredOrdersList:serverVal.server+'/admin/get-delivered-orders-list',
+    getUnDeliveredOrdersList:serverVal.server+'/admin/get-un-delivered-orders-list'
    }
   adminUpload(data: any): Observable<any> {
     return this.http.post(serverVal.server+"/admin/upload", data);  // POST request
@@ -41,5 +43,11 @@ export class ApiserviceService {
   getUserOrderDetail(userId:any,orderId:any){
     let url=this.apiConstants.getUserOrderDetail;
      return this.http.post(url,{userId,orderId})
+  }
+  getDeliveredOrdersList(){
+     return this.http.get(this.apiConstants.getDeliveredOrdersList);
+  }
+  getUnDeliveredOrdersList(){
+     return this.http.get(this.apiConstants.getUnDeliveredOrdersList);
   }
 }

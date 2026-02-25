@@ -3,10 +3,11 @@ import { SharedataService } from '../sharedata.service';
 import { ApiserviceService } from '../apiservice.service';
 import { EventModalComponent } from '../event-modal/event-modal.component';
 import { CommonModule } from '@angular/common';
+import { GenericAccordianComponent } from '../generic-accordian/generic-accordian.component';
 
 @Component({
   selector: 'app-registered-users',
-  imports: [EventModalComponent,CommonModule],
+  imports: [EventModalComponent,CommonModule,GenericAccordianComponent],
   templateUrl: './registered-users.component.html',
   styleUrl: './registered-users.component.scss'
 })
@@ -23,6 +24,7 @@ export class RegisteredUsersComponent implements OnInit {
       this.shareData.loader.set(true);
       this.apiService.getUsersLists().subscribe((res:any)=>{
         this.usersList=res?.usersList
+        // console.log(this.usersList,"sss")
         this.shareData.loader.set(false);
       },er=>{
         this.shareData.loader.set(false);
@@ -59,5 +61,12 @@ export class RegisteredUsersComponent implements OnInit {
     }else{
       this.closeDeleteModal();
     }
+  }
+  receiveUserId=(userId:any)=>{
+    // console.log(userId,"ssss")
+    const findUser=this.usersList.find((user:any)=>{
+      return user._id == userId
+    });
+    this.deleteFromUser(findUser);
   }
 }

@@ -1,10 +1,28 @@
-<div class="container pad-top-other">
+<div class="container track-order">
     <div class="row">
         <h4 class="col-12 id">
             Order Id -  <span class="order-id-span">{{orderId}}</span>
         </h4>
+        <h4 class="col-12 id">
+            Ordered Date - <span class="order-id-span">{{orderDetailsData.orderTime}}</span>
+        </h4>
+        <h4 class="col-12 id">
+            Phone - <span class="order-id-span">{{orderDetailsData.phone}}</span>
+        </h4>
+        <h4 class="col-12 id">
+            Delivery Address - <span class="order-id-span">{{orderDetailsData.address}}</span>
+        </h4>
+        <h4 class="col-12 id">
+            Pincode - <span class="order-id-span">{{orderDetailsData.pincode}}</span>
+        </h4>
+        <h4 class="col-12 id">
+            Delivered - <span class="order-id-span">{{orderDetailsData.delivered?'Product has been delivered':'Product till not yet delivered.'}}</span>
+        </h4>
+        <h4 class="col-12 id">
+            Total Price - <span class="order-id-span">{{getTotalPrice(orderDetailsData.orderedProducts) | currency:'INR'}}</span>
+        </h4>
         <p>
-            Expected on Today
+            Expected:{{orderDetailsData.expectedTime}}
         </p>
         <div class="col-12 col-md-12 tracking-container flex-vertical">
             <ng-container *ngFor="let stage of trackingMapList;let i=index;let od=odd;let end=last;" class="m-4">

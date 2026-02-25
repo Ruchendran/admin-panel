@@ -1,4 +1,9 @@
 @import "../../styles.scss";
+.track-order{
+    position: relative;
+    width: 80vw;
+    left: 10vw;
+}
 .order-id-span{
     color:$designColor;
 }
@@ -39,4 +44,9 @@
 }
 .p{
     font-size: 10px;
+}
+@media screen and (max-width:576px) {
+ .track-order{
+    left: 0px;
+ }   
 }

@@ -3,15 +3,39 @@
 
 </div>
 <!---headers-->
-<div class="admin-main">
+  <!--mobile-header-->
+    <div class="mobile-header flex" >
+        <div class="cart-order flex">
+          <i class="fa-solid fa-list icon cart menu" (click)="clickMobileArrow()"></i>
+          <i class="fa-solid fa-house-crack icon"  (click)="onClickPanel()"></i>
+        </div>
+        <div class="cart-order flex">
+            <div >
+                <i class="fa-solid fa-briefcase cart icon" (click)="goToOrder()" ></i>
+                <label class="cart-label">
+                    <!-- {{shareData.orderCount()}} -->
+                </label>
+            </div>
+             <div >
+                <i class="fa-solid fa-address-book icon cart" (click)="goToRegister()"  ></i>
+                
+                <label class="cart-label">
+                    <!-- {{shareData.cartCount()}} -->
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--mobile header-->
+<div class="admin-main flex">
     <router-outlet></router-outlet>
 </div>
  <!--nav section-->
- <div class="nav-section">
+ <div class="nav-section" [ngClass]="appInitialized?(mobileNav?'mobile-nav-animation-on':'mobile-nav-animation-off'):''">
     <blockquote (click)="onClickPanel()">
         <b>
             Admin Panel
         </b>
+        <i class="fa fa-window-close close-icon icon" (click)="clickMobileArrow()"></i>
     </blockquote>
     <div class="route-section flex-vertical">
         <hr class="line" />
@@ -21,9 +45,9 @@
         <hr class="line" />
         <a href="orders-list">All Orders list</a>
         <hr class="line" />
-        <a>Delivered list</a>
+        <a href="delivered-order">Delivered list</a>
         <hr class="line" />
-        <a>Un Delivered list</a>
+        <a href="un-delivered-order">Un Delivered list</a>
         <hr class="line" />
     </div>
  </div>

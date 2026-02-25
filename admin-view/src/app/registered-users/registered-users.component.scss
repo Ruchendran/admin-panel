@@ -1,4 +1,10 @@
 @import "../../styles.scss";
+.web-container{
+    width: 80vw;
+    display: block;
+    position: relative;
+    left:10vw;
+}
 .product{
     justify-content: space-around;
     box-shadow: 2px 2px 20px  grey ;
@@ -44,4 +50,15 @@ thead{
 p{
     margin: 0px;
     margin-top: 5px;
+}
+.mobile-accordian{
+    display: none;
+}
+@media screen and (max-width:576px){
+    .web-container{
+        display: none;
+    }
+    .mobile-accordian{
+        display: block;
+    }
 }

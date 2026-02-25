@@ -23,4 +23,10 @@ export class AdminHomeComponent implements OnInit {
   navToOrders=()=>{
     this.route.navigate(['orders-list'])
   }
+  navToDelivered=()=>{
+    this.route.navigate(['delivered-order'])
+  }
+  navToUnDelivered=()=>{
+    this.route.navigate(['un-delivered-order'])
+  }
 }

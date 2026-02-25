@@ -1,15 +1,16 @@
 @import "../../styles.scss";
 .landing-container{
     color:$designColor;
-    width: 100%;
+    width: 80%;
     height: calc(100vh - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+     left: 10vw;
 }
 
 .landing-sub-div{
-    height: transparent;
+    // height: transparent;
     align-items: center;
 }
 .btn{
@@ -29,4 +30,13 @@
     margin: 20px;
     height: 100px;
     font-weight: bold;
+}
+@media screen and (max-width:576px){
+    .landing-container{
+        height: 100vh;
+        position: relative;
+        top: 150px;
+        left: 0px;
+    }
+    
 }

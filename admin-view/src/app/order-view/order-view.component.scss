@@ -1,5 +1,10 @@
 
 @import "../../styles.scss";
+.order-container{
+    position: relative;
+    width: 80vw;
+    left: 10vw;
+}
 .product{
     justify-content: space-around;
     box-shadow: 2px 2px 20px  grey ;
@@ -38,6 +43,7 @@ p{
         display: none;
     }
     .mobile-order-container{
+        width: 100%;
         display: block;
     }
 }

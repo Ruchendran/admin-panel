@@ -1,9 +1,9 @@
 <div class="container order-lists">
   <div class="row m-2">
        <div class="flex">
-        <h1>
-            All Orders
-        </h1>
+            <h1>
+                Delivered Orders
+            </h1>
         </div>
     <table class="col-md-12 mt-3 mb-3">
         <thead>
@@ -59,9 +59,9 @@
 <div class="container mobile-order-lists">
     <div class="row">
         <div class="flex">
-        <h1>
-            All Orders
-        </h1>
+            <h1>
+                Delivered Orders
+            </h1>
         </div>
         <ng-container *ngFor="let order of orderList">
             <app-generic-accordian  (sendOrderId)="receiveOrderId($event)" [reqProps]="{

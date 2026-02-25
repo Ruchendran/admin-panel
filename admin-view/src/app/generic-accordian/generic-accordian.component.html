@@ -1,0 +1,50 @@
+
+<div class="accordian-container flex" [style.width]="reqProps.accordianWidth" (click)="accordianEvent()">
+        <h1 class="heading" >
+            <strong [style.color]="reqProps.contentColor" >{{reqProps.order?'OrderId:':'UserName'}}</strong> {{reqProps.heading}}
+        </h1>
+        <div>
+            <i class="fa fa-angle-down pointer icon" [style.color]="reqProps.contentColor" [ngClass]="accordianShow?'icon-rotate-forward':notInitial?'icon-rotate-rev':''"></i>
+        </div>
+</div>
+ <div class="panel flex" [style.width]="reqProps.accordianWidth" [ngClass]="accordianShow?'panel-open':notInitial?'panel-close':''">
+   <i class="fa-solid fa-trash icon del-icon" (click)="deleteFromUser(reqProps.userId)"  *ngIf="reqProps.deleteIcon"></i>
+    <!-- <img [src]="reqProps.img" class="img"  *ngIf="reqProps.img" /> -->
+    <div style="width: 100%;" >
+        <p *ngIf="reqProps.order" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Delivered:</strong> {{reqProps.delivered?'Order Delivered':'Order Not Delivered'}}
+        </p>
+        <p *ngIf="reqProps.userId" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> UserId:</strong> {{reqProps.userId}}
+        </p>
+        <p *ngIf="reqProps.productName" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Product:</strong> {{reqProps.productName}}
+        </p>
+        <p *ngIf="reqProps.orderTime" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Order Time:</strong> {{reqProps.orderTime}}
+        </p>
+        <!-- <p *ngIf="reqProps.heading" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Usermail:</strong> {{reqProps.heading}}
+        </p> -->
+        <p *ngIf="reqProps.phone" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Phone:</strong> {{reqProps.phone}}
+        </p>
+        <p *ngIf="reqProps.address" class="m-0">
+           <strong [style.color]="reqProps.contentColor"> Address:</strong> {{reqProps.address}}
+        </p>
+        <p *ngIf="reqProps.description">
+            {{reqProps.description}}
+        </p>
+        <p *ngIf="reqProps.price">
+            {{reqProps.price | currency:'INR'}}
+        </p>
+        <p  *ngIf="reqProps.quantity">
+            Quantity:&nbsp;{{reqProps.quantity}}
+        </p>
+        <div class="flex m-top-10" *ngIf="reqProps.viewBtn">
+            <button class="btn view-btn" (click)="viewOrderEmit(reqProps.heading)">
+                View Order
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,9 @@
 @import "../../styles.scss";
+.order-lists{
+    width: 80vw;
+    position: relative;
+    left: 10vw;
+}
 .product{
     justify-content: space-around;
     box-shadow: 2px 2px 20px  grey ;
@@ -44,4 +49,15 @@ thead{
 p{
     margin: 0px;
     margin-top: 5px;
+}
+.mobile-order-lists{
+    display: none;
+}
+@media screen and (max-width:576px) {
+    .order-lists{
+        display: none;
+    }
+    .mobile-order-lists{
+        display: block;
+    }
 }

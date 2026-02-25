@@ -14,10 +14,22 @@ import { MessageModalComponent } from './message-modal/message-modal.component';
 })
 export class AppComponent {
   title = 'admin-view';
+  appInitialized=false;
+  mobileNav:boolean=false;
   constructor(private route:Router,public shareData:SharedataService){
 
   }
+  clickMobileArrow=()=>{
+    this.appInitialized=true
+    this.mobileNav=!this.mobileNav;
+  }
   onClickPanel=()=>{
     this.route.navigate(['/']);
+  }
+  goToOrder=()=>{
+    this.route.navigate(['/orders-list'])
+  }
+  goToRegister=()=>{
+    this.route.navigate(['/registered-users'])
   }
 }

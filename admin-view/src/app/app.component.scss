@@ -1,10 +1,10 @@
 @import "../styles.scss";
 .admin-main{
-    width: 80vw;
+    width: 100vw;
     height: transform;
-    position: absolute;
+    position: relative;
     top: 80px;
-    left: 20vw;
+    // left: 20vw;
 }
 .header{
     position: fixed;
@@ -47,4 +47,70 @@ blockquote{
 a{
     color:$designColor;
     text-decoration: none;
+}
+.mobile-header{
+    display: none;
+}
+@media screen and (max-width:576px){
+    .nav-section{
+        width: 50vw;
+        border-radius: 0px;
+    }
+     .nav-section{
+        display: block;
+        position: fixed;
+        width: 60%;
+        height: 100vh;
+        background: $mobileBg;
+        top: 0px;
+        z-index: 3;
+        padding-top: 10px;
+        left: -60%;
+    }
+    .admin-main{
+        left: 0px;
+        // padding-top: 200px;
+    }
+    .header{
+        display: none;
+    }
+    .mobile-header{
+        margin-top: 20px;
+        width: 100vw;
+        height: 50px;
+        box-shadow: 2px 2px 10px grey;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        background: $mobileBg;
+        z-index: 2;
+    }
+    .cart-order{
+        margin-right: 10px;
+        width: 25vw;
+        justify-content: space-around;
+    }
+     .close-icon{
+    right: 10px;
+    position: absolute;
+    }
+     .mobile-nav-animation-off{
+     animation: nav-motion-down 0.5s forwards linear;
+ }
+ @keyframes nav-motion-down {
+   0%{
+    left:0;
+   }
+   100%{
+    left: -60%;
+   }
+ }
+ .mobile-nav-animation-on{
+    animation: nav-motion-up 0.5s forwards linear;
+ }
+ @keyframes nav-motion-up {
+    100%{
+        left:0;
+    }
+ }
 }

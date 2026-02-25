@@ -20,11 +20,20 @@ export class TrackOrderComponent {
   activeTrackingIndex=0;
   trackingMapList=[];
   orderId:any='';
-  btnName='Update'
+  btnName='Update';
+  orderDetailsData:any;
+  getTotalPrice=(orders:any)=>{
+    let total=0;
+    orders.forEach((order:any)=>{
+      total+=order.productPrice
+    });
+    return total;
+  }
   orderDetails=()=>{
       this.sharedData.loader.set(true);
       this.apiService.getOrderDetail(this.orderId).subscribe((res:any)=>{
-      this.sharedData.loader.set(false)
+      this.sharedData.loader.set(false);
+      this.orderDetailsData=res.orderDetails;
       this.trackingMapList=res?.orderDetails?.trackerMap;
       this.activeTrackingIndex=res?.orderDetails?.activeTrackingIndex+1;
     },er=>{

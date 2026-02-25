@@ -1,5 +1,5 @@
 <div class="container-fluid landing-container flex">
-    <div class="row flex landing-sub-div">
+    <div class="row flex ">
         <div class="col-md-6 head-card flex box-shadow">
             <b>
                      Available Schemas
@@ -20,10 +20,10 @@
         <div class="col-md-3 schema-card box-shadow flex">
             Cart Details
         </div>
-        <div class="col-md-3 schema-card box-shadow flex">
+        <div class="col-md-3 schema-card box-shadow flex" (click)="navToDelivered()">
             Delivered List
         </div>
-        <div class="col-md-3 schema-card box-shadow flex">
+        <div class="col-md-3 schema-card box-shadow flex" (click)="navToUnDelivered()">
             Un Delivered List
         </div>
     </div>
